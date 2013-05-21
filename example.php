@@ -24,7 +24,7 @@ if ($_POST) {
         echo '<span style="color: green">File successfully uploaded to your Dropbox!</span>';
     } catch (Exception $e) {
         // Handle Upload Exceptions
-        $label = ($e->getCode() & $uploader::FLAG_DROPBOX_GENERIC) ? 'DropboxUploader' : 'Exception';
+        $label = ($e->getCode() & $uploader->FLAG_DROPBOX_GENERIC) ? 'DropboxUploader' : 'Exception';
         $error = sprintf("[%s] #%d %s", $label, $e->getCode(), $e->getMessage());
 
         echo '<span style="color: red">Error: ' . htmlspecialchars($error) . '</span>';
